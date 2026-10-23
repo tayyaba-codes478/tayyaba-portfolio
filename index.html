@@ -1,456 +1,249 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080b14">
-  <meta name="description" content="Tayyaba's developer portfolio. Modern, responsive websites and creative frontend development.">
+  <meta name="description" content="Tayyaba's personal web development portfolio.">
   <title>Tayyaba | Frontend Developer</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
-
 <body>
 
-  <div class="background-glow glow-one"></div>
-  <div class="background-glow glow-two"></div>
+  <header class="navbar">
+    <a href="#home" class="logo">tayyaba<span>.</span></a>
 
-  <header class="header" id="top">
-    <nav class="navbar container">
-      <a href="#home" class="logo">tayyaba<span>.</span></a>
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Toggle navigation" aria-expanded="false">☰</button>
 
-      <button class="menu-toggle" id="menuToggle"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="navLinks">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <div class="nav-links" id="navLinks">
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link nav-contact">Let's Talk <span>↗</span></a>
-      </div>
+    <nav id="navMenu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main>
-
-    <!-- HERO SECTION -->
-    <section class="hero section container" id="home">
+    <section class="hero section" id="home">
       <div class="hero-content reveal">
-
-        <div class="availability">
-          <span class="status-dot"></span>
-          OPEN TO FREELANCE PROJECTS
-        </div>
-
-        <p class="eyebrow">HELLO, I'M TAYYABA</p>
-
-        <h1>
-          I build websites<br>
-          that feel <span class="gradient-text">different.</span>
-        </h1>
-
+        <p class="eyebrow">HELLO, WELCOME TO MY PORTFOLIO</p>
+        <h1>Hi, I'm <span>Tayyaba</span></h1>
+        <h2>Aspiring Frontend Developer</h2>
         <p class="hero-description">
-          I'm a budding frontend developer passionate about creating
-          modern, responsive and visually engaging web experiences.
-          Let's turn your ideas into reality.
+          I create beautiful, responsive websites while learning and
+          improving my skills in HTML, CSS and JavaScript.
         </p>
 
         <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">
-            Explore My Work <span>↗</span>
-          </a>
-
-          <a href="#contact" class="btn btn-glass">
-            Let's Collaborate
-          </a>
+          <a class="btn primary-btn" href="#projects">Explore My Work</a>
+          <a class="btn secondary-btn" href="#contact">Contact Me</a>
         </div>
 
-        <div class="hero-socials">
-          <span>FIND ME ON</span>
-
-          <a href="https://github.com/tayyaba-codes478"
-             target="_blank"
-             rel="noopener noreferrer">
-            GitHub ↗
-          </a>
-
-          <!-- Add your own LinkedIn profile URL here when available -->
-          <a href="https://www.linkedin.com/"
-             target="_blank"
-             rel="noopener noreferrer">
-            LinkedIn ↗
-          </a>
-        </div>
+        <p class="hero-note">Learning • Creating • Growing</p>
       </div>
 
-      <div class="hero-visual reveal">
-        <div class="orbit orbit-one"></div>
-        <div class="orbit orbit-two"></div>
-
-        <div class="profile-card glass-card">
-          <div class="profile-top">
-            <span class="window-dot dot-red"></span>
-            <span class="window-dot dot-yellow"></span>
-            <span class="window-dot dot-green"></span>
-            <span class="profile-label">developer.js</span>
+      <div class="hero-card reveal">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="code-window">
+          <div class="window-top">
+            <span></span><span></span><span></span>
+            <small>my-portfolio.js</small>
           </div>
-
-          <div class="code-preview">
+          <div class="code-content">
             <p><span class="code-purple">const</span> developer = {</p>
-            <p class="indent">name: <span class="code-green">'Tayyaba'</span>,</p>
-            <p class="indent">role: <span class="code-green">'Frontend Developer'</span>,</p>
-            <p class="indent">skills: [</p>
-            <p class="indent double-indent"><span class="code-orange">'HTML'</span>,</p>
-            <p class="indent double-indent"><span class="code-orange">'CSS'</span>,</p>
-            <p class="indent double-indent"><span class="code-orange">'JavaScript'</span></p>
-            <p class="indent">],</p>
-            <p class="indent">creative: <span class="code-purple">true</span>,</p>
+            <p>&nbsp;&nbsp;name: <span class="code-green">"Tayyaba"</span>,</p>
+            <p>&nbsp;&nbsp;skills: [</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-green">"HTML"</span>,</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-green">"CSS"</span>,</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-green">"JavaScript"</span></p>
+            <p>&nbsp;&nbsp;],</p>
+            <p>&nbsp;&nbsp;goal: <span class="code-green">"Keep Growing"</span></p>
             <p>};</p>
-            <p class="code-comment">// Let's build something great!</p>
           </div>
-
-          <div class="profile-footer">
-            <span class="mini-status"></span>
-            <span>Available for new projects</span>
-          </div>
-        </div>
-
-        <div class="floating-chip chip-top">
-          <span class="chip-icon">✦</span>
-          Creative Design
-        </div>
-
-        <div class="floating-chip chip-bottom">
-          <span class="chip-icon">⌘</span>
-          Clean Code
+          <div class="code-footer">● Available for learning opportunities</div>
         </div>
       </div>
-
-      <a href="#about" class="scroll-indicator">
-        <span class="scroll-line"></span>
-        SCROLL TO EXPLORE
-      </a>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section class="section container" id="about">
+    <section class="section about-section" id="about">
       <div class="section-heading reveal">
         <p class="eyebrow">GET TO KNOW ME</p>
-        <h2>A little about <span class="gradient-text">me.</span></h2>
-        <p>Creative thinking meets thoughtful development.</p>
+        <h2>About <span>Me</span></h2>
       </div>
 
-      <div class="about-grid">
-
-        <div class="glass-card about-card reveal">
-          <div class="about-icon">✳</div>
-          <h3>Who I Am</h3>
+      <div class="about-card reveal">
+        <div class="about-icon">✦</div>
+        <div>
+          <h3>My Journey in Web Development</h3>
           <p>
-            I'm Tayyaba, an aspiring frontend developer learning to build
-            beautiful and useful websites. I enjoy experimenting with
-            layouts, colours, interactions and modern web technologies.
+            I'm a beginner web developer passionate about designing
+            modern and user-friendly websites. I enjoy practicing
+            HTML, CSS and JavaScript, experimenting with new designs,
+            and turning ideas into working web pages. My goal is to
+            keep learning and build better projects with every step.
           </p>
         </div>
-
-        <div class="glass-card about-card reveal">
-          <div class="about-icon">⌘</div>
-          <h3>What I Do</h3>
-          <p>
-            I create responsive landing pages, interactive website layouts
-            and frontend projects with a focus on clean code, accessible
-            design and a smooth user experience.
-          </p>
-        </div>
-
-        <div class="glass-card about-card reveal">
-          <div class="about-icon">↗</div>
-          <h3>My Goal</h3>
-          <p>
-            To keep improving my development skills, collaborate with
-            clients and turn creative ideas into polished digital
-            experiences.
-          </p>
-        </div>
-
       </div>
     </section>
 
-    <!-- SKILLS SECTION -->
-    <section class="section container" id="skills">
+    <section class="section" id="skills">
       <div class="section-heading reveal">
-        <p class="eyebrow">MY TOOLKIT</p>
-        <h2>Skills & <span class="gradient-text">technologies.</span></h2>
-        <p>The tools I'm learning and using to create for the web.</p>
+        <p class="eyebrow">WHAT I'M LEARNING</p>
+        <h2>My <span>Skills</span></h2>
+        <p class="section-description">
+          The tools I'm using to build my web development journey.
+        </p>
       </div>
 
       <div class="skills-grid">
+        <article class="skill-card reveal">
+          <div class="skill-icon html-icon">5</div>
+          <h3>HTML</h3>
+          <p>Building the structure and content of web pages.</p>
+          <div class="skill-track"><span style="width: 75%"></span></div>
+          <small>Learning and practicing</small>
+        </article>
 
-        <div class="glass-card skill-card reveal">
-          <span class="skill-symbol html-symbol">5</span>
-          <h3>HTML5</h3>
-          <p>Semantic structure</p>
-          <div class="skill-track"><span style="--level:85%"></span></div>
-        </div>
+        <article class="skill-card reveal">
+          <div class="skill-icon css-icon">✧</div>
+          <h3>CSS</h3>
+          <p>Creating layouts, colors, animations and responsive designs.</p>
+          <div class="skill-track"><span style="width: 65%"></span></div>
+          <small>Learning and practicing</small>
+        </article>
 
-        <div class="glass-card skill-card reveal">
-          <span class="skill-symbol css-symbol">✳</span>
-          <h3>CSS3</h3>
-          <p>Layouts & styling</p>
-          <div class="skill-track"><span style="--level:75%"></span></div>
-        </div>
-
-        <div class="glass-card skill-card reveal">
-          <span class="skill-symbol js-symbol">JS</span>
+        <article class="skill-card reveal">
+          <div class="skill-icon js-icon">JS</div>
           <h3>JavaScript</h3>
-          <p>Interactive interfaces</p>
-          <div class="skill-track"><span style="--level:45%"></span></div>
-        </div>
+          <p>Learning programming logic and interactive features.</p>
+          <div class="skill-track"><span style="width: 40%"></span></div>
+          <small>Learning and practicing</small>
+        </article>
 
-        <div class="glass-card skill-card reveal">
-          <span class="skill-symbol git-symbol">⌘</span>
-          <h3>Git & GitHub</h3>
-          <p>Version control</p>
-          <div class="skill-track"><span style="--level:30%"></span></div>
-        </div>
-
+        <article class="skill-card reveal">
+          <div class="skill-icon tools-icon">⌘</div>
+          <h3>Tools</h3>
+          <p>Practicing with VS Code, GitHub and browser tools.</p>
+          <div class="skill-track"><span style="width: 55%"></span></div>
+          <small>Learning and practicing</small>
+        </article>
       </div>
-
-      <p class="skills-note">
-        Skill indicators are illustrative and can be adjusted as you progress.
-      </p>
+      <p class="skill-disclaimer">Skill indicators represent my current learning progress.</p>
     </section>
 
-    <!-- PROJECTS SECTION -->
-    <section class="section container" id="projects">
+    <section class="section projects-section" id="projects">
       <div class="section-heading reveal">
-        <p class="eyebrow">SELECTED WORK</p>
-        <h2>Things I've <span class="gradient-text">built.</span></h2>
-        <p>A few projects from my web development journey.</p>
+        <p class="eyebrow">SOME THINGS I'VE BUILT</p>
+        <h2>My <span>Projects</span></h2>
+        <p class="section-description">
+          Small projects that help me practice and improve my skills.
+        </p>
       </div>
 
       <div class="projects-grid">
-
-        <!-- YOUTUBE PROJECT -->
-        <article class="glass-card project-card reveal">
-          <div class="project-preview youtube-preview">
+        <article class="project-card reveal">
+          <div class="project-preview preview-portfolio">
             <div class="mock-browser">
-              <div class="mock-bar">
-                <span></span><span></span><span></span>
-              </div>
-
-              <div class="youtube-mock">
-                <div class="mock-sidebar">
-                  <i></i><i></i><i></i><i></i>
-                </div>
-
-                <div class="mock-videos">
-                  <div class="mock-video video-red"><span>▶</span></div>
-                  <div class="mock-video video-blue"><span>▶</span></div>
-                  <div class="mock-video video-purple"><span>▶</span></div>
-                  <div class="mock-video video-orange"><span>▶</span></div>
-                </div>
+              <div class="mock-top"><i></i><i></i><i></i></div>
+              <div class="mock-portfolio">
+                <span>MY PORTFOLIO</span>
+                <strong>Creative.</strong>
+                <strong>Curious.</strong>
+                <div class="mock-line"></div>
               </div>
             </div>
-
-            <span class="project-number">01</span>
           </div>
-
           <div class="project-info">
-            <div class="project-tags">
-              <span>HTML</span><span>CSS</span>
-            </div>
+            <p class="project-number">PROJECT 01</p>
+            <h3>Personal Portfolio</h3>
+            <p>A personal website to introduce myself and showcase my web development journey.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <a class="project-link" href="https://github.com/tayyaba-codes478/tayyaba-portfolio" target="_blank" rel="noopener noreferrer">View Source <span>↗</span></a>
+          </div>
+        </article>
 
+        <article class="project-card reveal">
+          <div class="project-preview preview-youtube">
+            <div class="mock-video-layout">
+              <div class="mock-sidebar"><b>▶</b><b>⌂</b><b>▣</b></div>
+              <div class="mock-videos">
+                <div class="mock-video large-video"><span>▶</span></div>
+                <div class="mock-video-row">
+                  <div class="mock-video"></div><div class="mock-video"></div>
+                </div>
+                <div class="mock-lines"><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <p class="project-number">PROJECT 02</p>
             <h3>YouTube UI Clone</h3>
-
-            <p>
-              A video-platform-inspired layout with navigation,
-              video cards and hover effects.
-            </p>
-
-            <a class="project-link" href="#contact" data-project="YouTube UI Clone">
-              Discuss a similar project <span>↗</span>
-            </a>
+            <p>A practice project inspired by a video platform's layout and interface.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <span class="project-note">Practice project</span>
           </div>
         </article>
 
-        <!-- COLOR STUDIO PROJECT -->
-        <article class="glass-card project-card reveal">
-          <div class="project-preview color-studio-preview">
-            <div class="mock-browser">
-              <div class="mock-bar">
-                <span></span><span></span><span></span>
-              </div>
-
-              <div style="padding:20px;background:#1e1535;">
-                <h3 style="color:#c4b5fd;margin-bottom:15px;">
-                  Color Studio
-                </h3>
-
-                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;">
-                  <div style="height:55px;border-radius:8px;background:#c4b5fd;"></div>
-                  <div style="height:55px;border-radius:8px;background:#fda4af;"></div>
-                  <div style="height:55px;border-radius:8px;background:#6ee7b7;"></div>
-                  <div style="height:55px;border-radius:8px;background:#7dd3fc;"></div>
-                  <div style="height:55px;border-radius:8px;background:#c084fc;"></div>
-                  <div style="height:55px;border-radius:8px;background:#fbbf24;"></div>
-                </div>
-              </div>
+        <article class="project-card reveal">
+          <div class="project-preview preview-netflix">
+            <div class="streaming-screen">
+              <span class="stream-logo">N</span>
+              <strong>WATCH SOMETHING<br>AMAZING.</strong>
+              <div class="stream-bars"><i></i><i></i><i></i></div>
             </div>
-
-            <span class="project-number">04</span>
           </div>
-
           <div class="project-info">
-            <div class="project-tags">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-            </div>
+            <p class="project-number">PROJECT 03</p>
+            <h3>Netflix UI Clone</h3>
+            <p>A streaming-inspired interface created to practice website styling and layout.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <span class="project-note">Practice project</span>
+          </div>
+        </article>
 
+        <article class="project-card reveal">
+          <div class="project-preview preview-color">
+            <div class="color-studio-screen">
+              <span class="color-orb orb-a"></span>
+              <span class="color-orb orb-b"></span>
+              <span class="color-orb orb-c"></span>
+              <strong>Color Studio</strong>
+              <small>EXPLORE YOUR COLORS</small>
+              <div class="palette"><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="project-info">
+            <p class="project-number">PROJECT 04</p>
             <h3>Color Studio</h3>
-
-            <p>
-              A creative color toolkit with palettes, gradient generation,
-              color harmony and PNG downloads.
-            </p>
-
-            <a class="project-link"
-               href="https://tayyaba-codes478.github.io/color-studio/"
-               target="_blank"
-               rel="noopener noreferrer">
-              Live Demo <span>↗</span>
-            </a>
-
-            <a class="project-link"
-               href="https://github.com/tayyaba-codes478/color-studio"
-               target="_blank"
-               rel="noopener noreferrer">
-              GitHub Code <span>↗</span>
-            </a>
+            <p>A colorful web project exploring visual design and interactive web experiences.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <a class="project-link" href="https://tayyaba-codes478.github.io/color-studio/" target="_blank" rel="noopener noreferrer">Live Demo <span>↗</span></a>
           </div>
         </article>
-
-        <!-- STREAMING PROJECT -->
-        <article class="glass-card project-card reveal">
-          <div class="project-preview netflix-preview">
-            <div class="netflix-mock">
-              <span class="netflix-logo">N</span>
-              <div class="netflix-lines"></div>
-
-              <div class="netflix-row">
-                <span></span><span></span><span></span>
-              </div>
-            </div>
-
-            <span class="project-number">02</span>
-          </div>
-
-          <div class="project-info">
-            <div class="project-tags">
-              <span>HTML</span><span>CSS</span>
-            </div>
-
-            <h3>Streaming UI Clone</h3>
-
-            <p>
-              A cinematic streaming-inspired interface with bold visuals
-              and content cards.
-            </p>
-
-            <a class="project-link" href="#contact" data-project="Streaming UI Clone">
-              Discuss a similar project <span>↗</span>
-            </a>
-          </div>
-        </article>
-
-        <!-- TO-DO PROJECT -->
-        <article class="glass-card project-card reveal">
-          <div class="project-preview todo-preview">
-            <div class="todo-mock">
-              <div class="todo-title">My Tasks<span>✦</span></div>
-              <div class="todo-item"><i>✓</i> Plan the week</div>
-              <div class="todo-item"><i>✓</i> Learn JavaScript</div>
-              <div class="todo-item"><i>+</i> Build something new</div>
-            </div>
-
-            <span class="project-number">03</span>
-          </div>
-
-          <div class="project-info">
-            <div class="project-tags">
-              <span>HTML</span><span>CSS</span><span>JS</span>
-            </div>
-
-            <h3>Interactive To-Do List</h3>
-
-            <p>
-              A task manager with task creation, completion and local storage.
-            </p>
-
-            <a class="project-link" href="#contact" data-project="Interactive To-Do List">
-              Discuss a similar project <span>↗</span>
-            </a>
-          </div>
-        </article>
-
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section class="section container" id="contact">
-      <div class="contact-panel glass-card reveal">
-
-        <div class="contact-content">
-          <p class="eyebrow">HAVE A PROJECT IN MIND?</p>
-
-          <h2>
-            Let's make something<br>
-            <span class="gradient-text">awesome together.</span>
-          </h2>
-
-          <p>
-            Have an idea for a website? Tell me about it.
-            Let's explore how we can bring it to life.
-          </p>
-
-          <a href="mailto:YOUR-EMAIL@gmail.com"
-             class="btn btn-primary"
-             id="emailLink">
-            Email Me <span>↗</span>
-          </a>
-        </div>
-
-        <div class="contact-decoration">
-          <div class="contact-orbit orbit-a"></div>
-          <div class="contact-orbit orbit-b"></div>
-          <div class="contact-center">T<span>.</span></div>
-        </div>
-
+    <section class="section contact-section" id="contact">
+      <div class="contact-card reveal">
+        <p class="eyebrow">LET'S CONNECT</p>
+        <h2>Have an idea? Let's <span>talk.</span></h2>
+        <p>I'm learning, building projects and always looking for opportunities to grow.</p>
+        <a class="btn primary-btn" href="https://github.com/tayyaba-codes478" target="_blank" rel="noopener noreferrer">Visit My GitHub ↗</a>
       </div>
     </section>
-
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer container">
+  <footer>
     <a href="#home" class="logo">tayyaba<span>.</span></a>
-
-    <p>Designed & built with <span class="heart">♥</span> by Tayyaba</p>
-
-    <p>© <span id="year"></span> All rights reserved.</p>
+    <p>Designed and built with care.</p>
+    <p>© <span id="year"></span> Tayyaba. Keep learning.</p>
   </footer>
 
+  <button id="backToTop" aria-label="Back to top">↑</button>
+  <script src="script.js"></script>
 </body>
 </html>
+```
