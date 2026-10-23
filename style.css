@@ -1217,7 +1217,21 @@ button {
   cursor: pointer;
   pointer-events: auto;
 }
+/* FIX: Make project links clickable */
 
+.project-info {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.project-link {
+  position: relative;
+  z-index: 20;
+  display: inline-flex;
+  cursor: pointer;
+  pointer-events: auto;
+}
 
   .reveal {
     opacity: 1;
