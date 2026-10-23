@@ -997,3 +997,8 @@ footer p {
     transform: none;
   }
 }
+/* Fallback: keep portfolio content visible */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
