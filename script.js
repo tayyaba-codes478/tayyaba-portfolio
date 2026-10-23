@@ -1,50 +1,62 @@
-
-// ===========================
-// TAYYABA PORTFOLIO JAVASCRIPT
-// ===========================
-
+javascript
+// ========================================
 // 1. MOBILE NAVIGATION
+// ========================================
 
 const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
-const navItems = document.querySelectorAll(".nav-link");
+const navMenu = document.getElementById("navMenu");
+const navLinks = document.querySelectorAll("#navMenu a");
 
-menuToggle.addEventListener("click", () => {
-  const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+if (menuToggle && navMenu) {
+  menuToggle.addEventListener("click", function () {
+    const isOpen = navMenu.classList.toggle("open");
 
-  menuToggle.setAttribute("aria-expanded", String(!isOpen));
-  menuToggle.setAttribute(
-    "aria-label",
-    isOpen ? "Open navigation menu" : "Close navigation menu"
-  );
-
-  navLinks.classList.toggle("open", !isOpen);
-});
-
-// Mobile par link click ho to menu close ho jaye.
-
-navItems.forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Open navigation menu");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.textContent = isOpen ? "✕" : "☰";
   });
-});
 
-// 2. CURRENT YEAR IN FOOTER
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      navMenu.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.textContent = "☰";
+    });
+  });
+
+  document.addEventListener("click", function (event) {
+    if (
+      !navMenu.contains(event.target) &&
+      !menuToggle.contains(event.target)
+    ) {
+      navMenu.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.textContent = "☰";
+    }
+  });
+}
+
+
+// ========================================
+// 2. AUTOMATIC FOOTER YEAR
+// ========================================
 
 const yearElement = document.getElementById("year");
 
-yearElement.textContent = new Date().getFullYear();
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
 
-// 3. SCROLL REVEAL ANIMATION
+
+// ========================================
+// 3. SCROLL REVEAL ANIMATIONS
+// ========================================
 
 const revealElements = document.querySelectorAll(".reveal");
 
 if ("IntersectionObserver" in window) {
   const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
+    function (entries, observer) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
           observer.unobserve(entry.target);
@@ -56,27 +68,32 @@ if ("IntersectionObserver" in window) {
     }
   );
 
-  revealElements.forEach((element) => {
+  revealElements.forEach(function (element) {
     revealObserver.observe(element);
   });
 } else {
-  revealElements.forEach((element) => {
+  revealElements.forEach(function (element) {
     element.classList.add("visible");
   });
 }
 
+
+// ========================================
 // 4. ACTIVE NAVIGATION LINK
+// ========================================
 
 const pageSections = document.querySelectorAll("main section[id]");
 
 if ("IntersectionObserver" in window) {
   const sectionObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
+    function (entries) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          navItems.forEach((link) => {
+          const currentId = entry.target.id;
+
+          navLinks.forEach(function (link) {
             const isActive =
-              link.getAttribute("href") === `#${entry.target.id}`;
+              link.getAttribute("href") === "#" + currentId;
 
             link.classList.toggle("active", isActive);
           });
@@ -84,30 +101,43 @@ if ("IntersectionObserver" in window) {
       });
     },
     {
-      rootMargin: "-25% 0px -60% 0px"
+      rootMargin: "-30% 0px -60% 0px"
     }
   );
 
-  pageSections.forEach((section) => {
+  pageSections.forEach(function (section) {
     sectionObserver.observe(section);
   });
 }
 
-// 5. PROJECT LINKS
-// Project links take the visitor to the contact section.
 
-const projectLinks = document.querySelectorAll("[data-project]");
+// ========================================
+// 5. BACK TO TOP BUTTON
+// ========================================
 
-projectLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    const projectName = link.dataset.project;
+const backToTop = document.getElementById("backToTop");
 
-    console.log(`Client is interested in: ${projectName}`);
+if (backToTop) {
+  window.addEventListener(
+    "scroll",
+    function () {
+      backToTop.classList.toggle("visible", window.scrollY > 350);
+    },
+    { passive: true }
+  );
+
+  backToTop.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   });
-});
+}
 
-// 6. CONTACT EMAIL
-// Replace hello@example.com in index.html with your real email.
-// Clicking the email button opens the visitor's email application.
 
-console.log("Tayyaba's portfolio is ready!");
+// ========================================
+// 6. CONSOLE WELCOME MESSAGE
+// ========================================
+
+console.log("Welcome to Tayyaba's Portfolio!");
+console.log("Thanks for visiting my website.");
