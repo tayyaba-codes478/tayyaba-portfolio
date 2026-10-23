@@ -1204,6 +1204,20 @@ button {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+   
+/* FIX: Make project links clickable */
+.project-info {
+  position: relative;
+  z-index: 5;
+}
+
+.project-link {
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
 
   .reveal {
     opacity: 1;
