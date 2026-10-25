@@ -2,375 +2,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080b14">
-  <meta name="description" content="Tayyaba's developer portfolio. Modern, responsive websites and creative frontend development.">
-  <title>Tayyaba | Frontend Developer</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamora | Discover Your Next Story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="background-glow glow-one"></div>
-  <div class="background-glow glow-two"></div>
+    <header class="navbar">
+        <a href="#" class="logo">stream<span>ora</span><i>.</i></a>
 
-  <header class="header" id="top">
-    <nav class="navbar container">
-      <a href="#home" class="logo">tayyaba<span>.</span></a>
+        <nav class="nav-links" id="navLinks">
+            <a href="#home" class="active">Home</a>
+            <a href="#trending">Trending</a>
+            <a href="#movies">Explore</a>
+            <a href="#watchlist">My List <span id="listCount">0</span></a>
+        </nav>
 
-      <button class="menu-toggle" id="menuToggle"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="navLinks">
-        <span></span><span></span><span></span>
-      </button>
-
-      <div class="nav-links" id="navLinks">
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link nav-contact">Let's Talk <span>↗</span></a>
-      </div>
-    </nav>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section class="hero section container" id="home">
-      <div class="hero-content reveal">
-        <div class="availability">
-          <span class="status-dot"></span>
-          OPEN TO FREELANCE PROJECTS
+        <div class="nav-actions">
+            <button class="icon-btn" id="searchToggle" aria-label="Search">⌕</button>
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+            <div class="avatar">T</div>
         </div>
+    </header>
 
-        <p class="eyebrow">HELLO, I'M TAYYABA</p>
-        <h1>I build websites<br>that feel <span class="gradient-text">different.</span></h1>
+   
+     <div class="search-panel" id="searchPanel">
+       <input
+          type="search"
+          id="searchInput"
+          placeholder="Search movies and series..."
+          aria-label="Search movies and series"
+          autocomplete="off"
+    >
 
-        <p class="hero-description">
-          I'm a budding frontend developer passionate about creating
-          modern, responsive and visually engaging web experiences.
-          Let's turn your ideas into reality.
-        </p>
+    <button id="clearSearch" type="button">✕</button>
+    <div class="search-results" id="searchResults"></div>
+</div>
 
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary">Explore My Work <span>↗</span></a>
-          <a href="#contact" class="btn btn-glass">Let's Collaborate</a>
-        </div>
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-image"></div>
+            <div class="hero-overlay"></div>
 
-        <div class="hero-socials">
-          <span>FIND ME ON</span>
-          <a href="https://github.com/tayyaba-codes478" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-          <a href="https://www.linkedin.com/in/tayyaba-rafiq-215b71445/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-        </div>
-      </div>
+            <div class="hero-content container">
+                <span class="eyebrow"><span class="live-dot"></span> STREAMORA ORIGINAL</span>
+                <p class="hero-kicker">THE STORY EVERYONE IS TALKING ABOUT</p>
+                <h1>Beyond the<br><span>Unknown.</span></h1>
+                <p class="hero-description">
+                    When the world goes quiet, the truth gets louder.
+                    Discover a new world of stories, mystery and adventure.
+                </p>
 
-      <div class="hero-visual reveal">
-        <div class="orbit orbit-one"></div>
-        <div class="orbit orbit-two"></div>
-
-        <div class="profile-card glass-card">
-          <div class="profile-top">
-            <span class="window-dot dot-red"></span>
-            <span class="window-dot dot-yellow"></span>
-            <span class="window-dot dot-green"></span>
-            <span class="profile-label">developer.js</span>
-          </div>
-
-          <div class="code-preview">
-            <p><span class="code-purple">const</span> developer = {</p>
-            <p class="indent">name: <span class="code-green">'Tayyaba'</span>,</p>
-            <p class="indent">role: <span class="code-green">'Frontend Developer'</span>,</p>
-            <p class="indent">skills: [</p>
-            <p class="indent double-indent"><span class="code-orange">'HTML'</span>,</p>
-            <p class="indent double-indent"><span class="code-orange">'CSS'</span>,</p>
-            <p class="indent double-indent"><span class="code-orange">'JavaScript'</span></p>
-            <p class="indent">],</p>
-            <p class="indent">creative: <span class="code-purple">true</span>,</p>
-            <p>};</p>
-            <p class="code-comment">// Let's build something great!</p>
-          </div>
-
-          <div class="profile-footer">
-            <span class="mini-status"></span>
-            <span>Available for new projects</span>
-          </div>
-        </div>
-
-        <div class="floating-chip chip-top"><span class="chip-icon">✦</span>Creative Design</div>
-        <div class="floating-chip chip-bottom"><span class="chip-icon">⌘</span>Clean Code</div>
-      </div>
-
-      <a href="#about" class="scroll-indicator">
-        <span class="scroll-line"></span>SCROLL TO EXPLORE
-      </a>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section container" id="about">
-      <div class="section-heading reveal">
-        <p class="eyebrow">GET TO KNOW ME</p>
-        <h2>A little about <span class="gradient-text">me.</span></h2>
-        <p>Creative thinking meets thoughtful development.</p>
-      </div>
-
-      <div class="about-grid">
-        <div class="glass-card about-card reveal">
-          <div class="about-icon">✳</div>
-          <h3>Who I Am</h3>
-          <p>I'm Tayyaba, an aspiring frontend developer learning to build beautiful and useful websites. I enjoy experimenting with layouts, colours, interactions and modern web technologies.</p>
-        </div>
-
-        <div class="glass-card about-card reveal">
-          <div class="about-icon">⌘</div>
-          <h3>What I Do</h3>
-          <p>I create responsive landing pages, interactive website layouts and frontend projects with a focus on clean code, accessible design and a smooth user experience.</p>
-        </div>
-
-        <div class="glass-card about-card reveal">
-          <div class="about-icon">↗</div>
-          <h3>My Goal</h3>
-          <p>To keep improving my development skills, collaborate with clients and turn creative ideas into polished digital experiences.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="section container" id="skills">
-      <div class="section-heading reveal">
-        <p class="eyebrow">MY TOOLKIT</p>
-        <h2>Skills & <span class="gradient-text">technologies.</span></h2>
-        <p>The tools I'm learning and using to create for the web.</p>
-      </div>
-
-      <div class="skills-grid">
-        <div class="glass-card skill-card reveal">
-          <span class="skill-symbol html-symbol">5</span>
-          <h3>HTML5</h3><p>Semantic structure</p>
-          <div class="skill-track"><span style="--level:85%"></span></div>
-        </div>
-
-        <div class="glass-card skill-card reveal">
-          <span class="skill-symbol css-symbol">✳</span>
-          <h3>CSS3</h3><p>Layouts & styling</p>
-          <div class="skill-track"><span style="--level:75%"></span></div>
-        </div>
-
-        <div class="glass-card skill-card reveal">
-          <span class="skill-symbol js-symbol">JS</span>
-          <h3>JavaScript</h3><p>Interactive interfaces</p>
-          <div class="skill-track"><span style="--level:45%"></span></div>
-        </div>
-
-        <div class="glass-card skill-card reveal">
-          <span class="skill-symbol git-symbol">⌘</span>
-          <h3>Git & GitHub</h3><p>Version control</p>
-          <div class="skill-track"><span style="--level:30%"></span></div>
-        </div>
-      </div>
-
-      <p class="skills-note">Skill indicators are illustrative and can be adjusted as you progress.</p>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="section container" id="projects">
-      <div class="section-heading reveal">
-        <p class="eyebrow">SELECTED WORK</p>
-        <h2>Things I've <span class="gradient-text">built.</span></h2>
-        <p>A few projects from my web development journey.</p>
-      </div>
-
-      <div class="projects-grid">
-
-        <!-- YOUTUBE UI CLONE -->
-        <article class="glass-card project-card reveal">
-          <div class="project-preview youtube-preview">
-            <div class="mock-browser">
-              <div class="mock-bar"><span></span><span></span><span></span></div>
-              <div class="youtube-mock">
-                <div class="mock-sidebar"><i></i><i></i><i></i><i></i></div>
-                <div class="mock-videos">
-                  <div class="mock-video video-red"><span>▶</span></div>
-                  <div class="mock-video video-blue"><span>▶</span></div>
-                  <div class="mock-video video-purple"><span>▶</span></div>
-                  <div class="mock-video video-orange"><span>▶</span></div>
+                <div class="hero-meta">
+                    <span class="rating">★ 9.2</span>
+                    <span>2026</span>
+                    <span>Series</span>
+                    <span class="quality">4K ULTRA HD</span>
                 </div>
-              </div>
-            </div>
-            <span class="project-number">01</span>
-          </div>
 
-          <div class="project-info">
-            <div class="project-tags"><span>HTML</span><span>CSS</span></div>
-            <h3>YouTube UI Clone</h3>
-            <p>A video-platform-inspired layout with navigation, video cards and hover effects.</p>
-            <div class="project-actions">
-              <a class="project-link" href="https://tayyaba-codes478.github.io/Youtube-ui-clone/" target="_blank" rel="noopener noreferrer">Live Demo <span>↗</span></a>
-              <a class="project-link" href="https://github.com/tayyaba-codes478/Youtube-ui-clone" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
-            </div>
-          </div>
-        </article>
-
-        <!-- NUMBER GUESSING GAME -->
-        <article class="glass-card project-card reveal">
-          <div class="project-preview">
-            <div class="mock-browser">
-              <div class="mock-bar"><span></span><span></span><span></span></div>
-              <div style="padding:35px 15px;text-align:center">
-                <div style="font-size:55px">🎯</div>
-                <h3 style="margin-top:12px">Guess the Number</h3>
-                <p style="margin-top:8px">Pick a number from 1–10</p>
-              </div>
-            </div>
-            <span class="project-number">02</span>
-          </div>
-
-          <div class="project-info">
-            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-            <h3>Number Guessing Game</h3>
-            <p>A fun interactive game featuring number hints, three attempts, and a play-again option.</p>
-            <div class="project-actions">
-              <a class="project-link" href="https://tayyaba-codes478.github.io/number-guessing-game/" target="_blank" rel="noopener noreferrer">Live Demo <span>↗</span></a>
-              <a class="project-link" href="https://github.com/tayyaba-codes478/number-guessing-game" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
-            </div>
-          </div>
-        </article>
-
-        <!-- COLOR STUDIO -->
-        <article class="glass-card project-card reveal">
-          <div class="project-preview color-studio-preview">
-            <div class="mock-browser">
-              <div class="mock-bar"><span></span><span></span><span></span></div>
-              <div style="padding:20px;background:#1e1535">
-                <h3 style="color:#c4b5fd;margin-bottom:15px">Color Studio</h3>
-                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
-                  <div style="height:55px;border-radius:8px;background:#c4b5fd"></div>
-                  <div style="height:55px;border-radius:8px;background:#fda4af"></div>
-                  <div style="height:55px;border-radius:8px;background:#6ee7b7"></div>
-                  <div style="height:55px;border-radius:8px;background:#7dd3fc"></div>
-                  <div style="height:55px;border-radius:8px;background:#c084fc"></div>
-                  <div style="height:55px;border-radius:8px;background:#fbbf24"></div>
+                <div class="hero-buttons">
+                    <a href="#movies" class="btn btn-primary">▶ Explore Titles</a>
+                    <a href="#about" class="btn btn-glass">ⓘ More Details</a>
                 </div>
-              </div>
+
+                <div class="hero-progress">
+                    <span></span><span></span><span></span><span></span>
+                </div>
             </div>
-            <span class="project-number">03</span>
-          </div>
 
-          <div class="project-info">
-            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-            <h3>Color Studio</h3>
-            <p>A creative color toolkit with palettes, gradient generation, color harmony and PNG downloads.</p>
-            <div class="project-actions">
-              <a class="project-link" href="https://tayyaba-codes478.github.io/color-studio/" target="_blank" rel="noopener noreferrer">Live Demo <span>↗</span></a>
-              <a class="project-link" href="https://github.com/tayyaba-codes478/color-studio" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
+            <div class="hero-side-label">CURATED FOR YOU — 001</div>
+        </section>
+
+        <section class="section container" id="trending">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">WHAT'S HOT</span>
+                    <h2>Trending <span>Now</span></h2>
+                    <p>Stories everyone's watching right now.</p>
+                </div>
+                <a href="#movies" class="text-link">View all ↗</a>
             </div>
-          </div>
-        </article>
 
-        <!-- STREAMING UI CLONE -->
-        <article class="glass-card project-card reveal">
-          <div class="project-preview netflix-preview">
-            <div class="netflix-mock">
-              <span class="netflix-logo">N</span>
-              <div class="netflix-lines"></div>
-              <div class="netflix-row"><span></span><span></span><span></span></div>
+            <div class="movie-grid" id="trendingGrid"></div>
+        </section>
+
+        <section class="section container" id="movies">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">YOUR NEXT OBSESSION</span>
+                    <h2>Explore <span>Collection</span></h2>
+                    <p>Find your next favourite story.</p>
+                </div>
             </div>
-            <span class="project-number">04</span>
-          </div>
 
-          <div class="project-info">
-            <div class="project-tags"><span>HTML</span><span>CSS</span></div>
-            <h3>Streaming UI Clone</h3>
-            <p>A cinematic streaming-inspired interface with bold visuals and content cards.</p>
-            <a class="project-link" href="#contact" data-project="Streaming UI Clone">Discuss a similar project <span>↗</span></a>
-          </div>
-        </article>
-
-        
-                <!-- STREAMORA -->
-        <article class="glass-card project-card reveal">
-          <div class="project-preview netflix-preview">
-            <div class="netflix-mock">
-              <span class="netflix-logo">S</span>
-              <div class="netflix-lines"></div>
-              <div class="netflix-row"><span></span><span></span><span></span></div>
+            <div class="filters" id="categoryFilters">
+                <button class="filter-btn active" data-category="All">All Titles</button>
+                <button class="filter-btn" data-category="Sci-Fi">Sci-Fi</button>
+                <button class="filter-btn" data-category="Action">Action</button>
+                <button class="filter-btn" data-category="Drama">Drama</button>
+                <button class="filter-btn" data-category="Mystery">Mystery</button>
+                <button class="filter-btn" data-category="Adventure">Adventure</button>
             </div>
-            <span class="project-number">05</span>
-          </div>
 
-          <div class="project-info">
-            <div class="project-tags">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-            </div>
-            <h3>Streamora</h3>
-            <p>A cinematic movie discovery website with search, category filters, movie details, and a watchlist.</p>
+            <div class="movie-grid" id="movieGrid"></div>
+            <p class="empty-state" id="emptyState" hidden>No titles found. Try another search.</p>
 
-            <div class="project-actions">
-              <a class="project-link" href="https://tayyaba-codes478.github.io/streamora/" target="_blank" rel="noopener noreferrer">Live Demo <span>↗</span></a>
 
-              <a class="project-link" href="https://github.com/tayyaba-codes478/streamora" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
-            </div>
-          </div>
-        </article>
-
-        <!-- FOCUSFLOW -->
-        <article class="glass-card project-card reveal">
-          <div class="project-preview todo-preview">
-            <div class="todo-mock">
-              <div class="todo-title">My Tasks<span>✦</span></div>
-              <div class="todo-item"><i>✓</i> Plan the week</div>
-              <div class="todo-item"><i>✓</i> Learn JavaScript</div>
-              <div class="todo-item"><i>+</i> Build something new</div>
-            </div>
-            <span class="project-number">05</span>
-          </div>
-
-          <div class="project-info">
-            <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-            <h3>FocusFlow — To-Do List</h3>
-            <p>A task manager with task creation, completion and local storage.</p>
-            <div class="project-actions">
-              <a class="project-link" href="https://tayyaba-codes478.github.io/focusflow/" target="_blank" rel="noopener noreferrer">Live Demo <span>↗</span></a>
-              <a class="project-link" href="https://github.com/tayyaba-codes478/focusflow" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section container" id="contact">
-      <div class="contact-panel glass-card reveal">
-        <div class="contact-content">
-          <p class="eyebrow">HAVE A PROJECT IN MIND?</p>
-          <h2>Let's make something<br><span class="gradient-text">awesome together.</span></h2>
-          <p>Have an idea for a website? Tell me about it. Let's explore how we can bring it to life.</p>
-          <a href="mailto:hello@example.com" class="btn btn-primary" id="emailLink">Email Me <span>↗</span></a>
+            <!-- My Watchlist Section -->
+        <section class="watchlist-section" id="watchlistSection">
+           <div class="section-heading">
+           <h2>My Watchlist <span>♥</span></h2>
+           <p>Your saved movies in one place</p>
         </div>
 
-        <div class="contact-decoration">
-          <div class="contact-orbit orbit-a"></div>
-          <div class="contact-orbit orbit-b"></div>
-          <div class="contact-center">T<span>.</span></div>
+         <div class="movie-grid" id="watchlistGrid"></div>
+
+        <p class="empty-state" id="watchlistEmpty">
+        Your watchlist is empty. Add movies using the + button.
+    </p>
+</section>
+        </section>
+
+        <section class="watchlist-section" id="watchlist">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <span class="section-label">SAVED FOR LATER</span>
+                        <h2>My <span>Watchlist</span></h2>
+                        <p>Your personal collection of stories to explore.</p>
+                    </div>
+                </div>
+                <div class="movie-grid" id="watchlistGrid"></div>
+                <p class="empty-state" id="watchlistEmpty">Your watchlist is empty. Add titles using the + button.</p>
+            </div>
+        </section>
+
+        <section class="about-section container" id="about">
+            <div class="about-card">
+                <div>
+                    <span class="section-label">A WORLD OF STORIES</span>
+                    <h2>Your next favourite<br>is just a click away.</h2>
+                    <p>A fictional streaming UI concept designed for a smooth, modern browsing experience.</p>
+                </div>
+                <a href="#movies" class="btn btn-primary">Start Exploring ↗</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <a href="#home" class="logo">stream<span>ora</span><i>.</i></a>
+            <p>A frontend practice project by Tayyaba.</p>
+            <span>© <span id="year"></span> Streamora UI</span>
         </div>
-      </div>
-    </section>
-  </main>
+    </footer>
 
-  <footer class="footer container">
-    <a href="#home" class="logo">tayyaba<span>.</span></a>
-    <p>Designed & built with <span class="heart">♥</span> by Tayyaba</p>
-    <p>© <span id="year"></span> All rights reserved.</p>
-  </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+    
+<!-- Movie Details Popup -->
+<div class="movie-modal" id="movieModal" aria-hidden="true">
+    <div class="movie-modal-backdrop" data-close-modal></div>
+
+    <div class="movie-modal-content"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="modalTitle">
+
+        <button class="movie-modal-close"
+                id="closeMovieModal"
+                type="button"
+                aria-label="Close movie details">✕</button>
+
+        <img id="modalImage" class="modal-image" src="" alt="">
+
+        <div class="modal-info">
+            <span class="modal-badge" id="modalBadge"></span>
+            <h2 id="modalTitle"></h2>
+
+            <div class="modal-meta">
+                <span id="modalYear"></span>
+                <span id="modalCategory"></span>
+                <span id="modalRating"></span>
+            </div>
+
+            <p id="modalDescription"></p>
+
+            <button id="modalWatchlistBtn"
+                    class="modal-watchlist-btn"
+                    type="button">
+                + Add to Watchlist
+            </button>
+
+            <button id="modalWatchNowBtn" class="modal-watch-btn" type="button">
+                ▶ Watch Now
+            </button>
+         </div>
+    </div>
+</div>
+      <script src="script.js"></script>
 </body>
 </html>
