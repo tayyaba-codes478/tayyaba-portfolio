@@ -1,7 +1,7 @@
 
-// ===========================
-// TAYYABA PORTFOLIO JAVASCRIPT
-// ===========================
+/* ===========================
+   TAYYABA PORTFOLIO JAVASCRIPT
+=========================== */
 
 // 1. MOBILE NAVIGATION
 
@@ -9,33 +9,35 @@ const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 const navItems = document.querySelectorAll(".nav-link");
 
-menuToggle.addEventListener("click", () => {
-  const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+if (menuToggle && navLinks) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
 
-  menuToggle.setAttribute("aria-expanded", String(!isOpen));
-  menuToggle.setAttribute(
-    "aria-label",
-    isOpen ? "Open navigation menu" : "Close navigation menu"
-  );
+    menuToggle.setAttribute("aria-expanded", String(!isOpen));
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Open navigation menu" : "Close navigation menu"
+    );
 
-  navLinks.classList.toggle("open", !isOpen);
-});
-
-// Mobile par link click ho to menu close ho jaye.
-
-navItems.forEach((link) => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Open navigation menu");
+    navLinks.classList.toggle("open", !isOpen);
   });
-});
 
-// 2. CURRENT YEAR IN FOOTER
+  navItems.forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open navigation menu");
+    });
+  });
+}
+
+// 2. CURRENT YEAR
 
 const yearElement = document.getElementById("year");
 
-yearElement.textContent = new Date().getFullYear();
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
 
 // 3. SCROLL REVEAL ANIMATION
 
@@ -51,18 +53,12 @@ if ("IntersectionObserver" in window) {
         }
       });
     },
-    {
-      threshold: 0.12
-    }
+    { threshold: 0.12 }
   );
 
-  revealElements.forEach((element) => {
-    revealObserver.observe(element);
-  });
+  revealElements.forEach((element) => revealObserver.observe(element));
 } else {
-  revealElements.forEach((element) => {
-    element.classList.add("visible");
-  });
+  revealElements.forEach((element) => element.classList.add("visible"));
 }
 
 // 4. ACTIVE NAVIGATION LINK
@@ -83,31 +79,20 @@ if ("IntersectionObserver" in window) {
         }
       });
     },
-    {
-      rootMargin: "-25% 0px -60% 0px"
-    }
+    { rootMargin: "-25% 0px -60% 0px" }
   );
 
-  pageSections.forEach((section) => {
-    sectionObserver.observe(section);
-  });
+  pageSections.forEach((section) => sectionObserver.observe(section));
 }
 
-// 5. PROJECT LINKS
-// Project links take the visitor to the contact section.
+// 5. PROJECT DISCUSSION LINKS
 
 const projectLinks = document.querySelectorAll("[data-project]");
 
 projectLinks.forEach((link) => {
   link.addEventListener("click", () => {
-    const projectName = link.dataset.project;
-
-    console.log(`Client is interested in: ${projectName}`);
+    console.log(`Client is interested in: ${link.dataset.project}`);
   });
 });
-
-// 6. CONTACT EMAIL
-// Replace hello@example.com in index.html with your real email.
-// Clicking the email button opens the visitor's email application.
 
 console.log("Tayyaba's portfolio is ready!");
